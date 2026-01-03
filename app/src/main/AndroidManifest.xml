@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <!-- Internet wajib untuk Firebase & Supabase -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Nanti kalau pakai FCM (Android 13+), aktifkan ini -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"
+        tools:targetApi="33" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:usesCleartextTraffic="true"
+        android:enableOnBackInvokedCallback="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.GethukDhonoPOS"
+        tools:targetApi="31">
+
+        <!-- FCM service -->
+        <service
+            android:name=".MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <!-- Entry point -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".RegisterActivity"
+            android:exported="false"/>
+
+        <!-- Admin -->
+        <activity
+            android:name=".AdminHomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminProdukActivity"
+            android:exported="false" />
+        <activity android:name=".ChatActivity"
+            android:exported="false" />
+        <activity android:name=".MapsTokoActivity"
+            android:exported="false" />
+        <activity android:name=".WebViewActivity"
+            android:exported="false" />
+        <activity android:name=".AdminTransaksiActivity"
+            android:exported="false" />
+        <activity android:name=".AdminTransaksiDetailActivity"
+            android:exported="false" />
+        <activity android:name=".AdminUsersActivity"
+            android:exported="false" />
+
+
+        <!-- Kasir + deep link untuk buka shift -->
+        <activity
+            android:name=".KasirHomeActivity"
+            android:exported="true"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="open_shift" android:host="open" />
+            </intent-filter>
+        </activity>
+
+        <!-- POS & Pembayaran -->
+        <activity
+            android:name=".PosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PembayaranActivity"
+            android:exported="false" />
+
+    </application>
+
+</manifest>

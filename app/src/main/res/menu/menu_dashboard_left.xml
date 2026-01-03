@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/mProduk"   android:title="Kelola Produk"/>
+    <item android:id="@+id/mLaporan"  android:title="Laporan Penjualan"/>
+    <item android:id="@+id/mUsers"    android:title="Kelola Pengguna"/>
+    <item android:id="@+id/chatKasir" android:title="Chat Kasir"/>
+    <item
+        android:id="@+id/mRefreshTheme"
+        android:title="Refresh Theme"
+        android:icon="@drawable/ic_refresh" />
+    <item android:id="@+id/mLogout"   android:title="Keluar"/>
+</menu>

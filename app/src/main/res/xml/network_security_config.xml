@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- Izinkan HTTP ke server lokal -->
+    <domain-config cleartextTrafficPermitted="true">
+        <!-- ganti dengan IP laptop kamu -->
+        <domain includeSubdomains="true">10.230.144.232</domain>
+        <!-- kalau tes di emulator Android Studio -->
+        <domain includeSubdomains="true">10.0.2.2</domain>
+    </domain-config>
+
+    <!-- (opsional) izinkan semua cleartext selama dev -->
+    <!--
+    <base-config cleartextTrafficPermitted="true" />
+    -->
+</network-security-config>

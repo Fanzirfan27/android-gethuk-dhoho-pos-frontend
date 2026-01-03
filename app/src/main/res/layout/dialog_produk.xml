@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp"
+    android:background="#FFF7ED"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!-- Preview gambar -->
+            <ImageView
+                android:id="@+id/ivPreview"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:scaleType="centerCrop"
+                android:background="#FFEAD5"
+            android:src="@mipmap/ic_launcher" />
+
+            <Button
+                android:id="@+id/btnPilihGambar"
+                android:text="Pilih Gambar"
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:backgroundTint="#D97706" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_marginTop="12dp"
+                android:hint="Nama Produk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxStrokeColor="#F59E0B"
+            app:boxStrokeWidth="2dp"
+            app:boxBackgroundColor="#FFFFFFFF"
+            app:hintTextColor="#5B3412">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etNama"
+                android:inputType="textCapWords"
+                android:textColor="#111827"
+            android:textCursorDrawable="@null"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_marginTop="8dp"
+            android:hint="Harga (Rp)"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxStrokeColor="#F59E0B"
+            app:boxStrokeWidth="2dp"
+            app:boxBackgroundColor="#FFFFFFFF"
+            app:hintTextColor="#5B3412">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etHarga"
+                android:inputType="number"
+                android:textColor="#111827"
+                android:textCursorDrawable="@null"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_marginTop="8dp"
+            android:hint="Stok"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxStrokeColor="#F59E0B"
+            app:boxStrokeWidth="2dp"
+            app:boxBackgroundColor="#FFFFFFFF"
+            app:hintTextColor="#5B3412">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etStok"
+                android:inputType="number"
+                android:textColor="#111827"
+                android:textCursorDrawable="@null"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_marginTop="8dp"
+            android:hint="SKU"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxStrokeColor="#F59E0B"
+            app:boxStrokeWidth="2dp"
+            app:boxBackgroundColor="#FFFFFFFF"
+            app:hintTextColor="#5B3412">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etSku"
+                android:inputType="text"
+                android:textColor="#111827"
+                android:textCursorDrawable="@null"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_marginTop="8dp"
+            android:hint="Minimal Stok"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxStrokeColor="#F59E0B"
+            app:boxStrokeWidth="2dp"
+            app:boxBackgroundColor="#FFFFFFFF"
+            app:hintTextColor="#5B3412">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etMinStok"
+                android:inputType="number"
+                android:textColor="#111827"
+                android:textCursorDrawable="@null"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.materialswitch.MaterialSwitch
+            android:id="@+id/swActive"
+            android:text="Aktif"
+            android:checked="true"
+            android:layout_marginTop="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#5B3412"
+            app:useMaterialThemeColors="true" />
+
+                <!-- indikator loading saat menyimpan -->
+            <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:visibility="gone"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="12dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:indeterminateTint="#D97706" />  <!-- amber-700 -->
+
+        </LinearLayout>
+</ScrollView>
